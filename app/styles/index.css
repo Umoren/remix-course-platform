@@ -1,0 +1,38 @@
+.container {
+    min-height: inherit;
+  }
+
+  
+  .content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  h1 {
+    margin: 0;
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 0.75);
+    text-align: center;
+    line-height: 0.5;
+    color: white;
+  }
+  
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    line-height: 1;
+    color: white;
+  }
+  
+  nav ul a:hover {
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1px;
+  }
+  

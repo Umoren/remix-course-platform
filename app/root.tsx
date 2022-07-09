@@ -4,7 +4,8 @@ import { withEmotionCache } from '@emotion/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { LiveReload, Outlet, Links, Meta, Scripts, ScrollRestoration } from "@remix-run/react";
 import { LinksFunction, MetaFunction } from "@remix-run/node";
-import globalStylesUrl from "./styles/global.css"
+import Navbar from '~/components/Navbar'
+
 
 
 import { ServerStyleContext, ClientStyleContext } from './context'
@@ -76,6 +77,7 @@ export default function App() {
   return (
     <Document>
       <ChakraProvider>
+        <Navbar />
         <Outlet />
       </ChakraProvider>
     </Document>

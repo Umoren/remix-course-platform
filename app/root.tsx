@@ -1,7 +1,7 @@
 
 import React, { useContext, useEffect } from 'react'
 import { withEmotionCache } from '@emotion/react'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, } from '@chakra-ui/react'
 import { LiveReload, Outlet, Links, Meta, Scripts, ScrollRestoration } from "@remix-run/react";
 import { LinksFunction, MetaFunction } from "@remix-run/node";
 import Navbar from '~/components/Navbar'
@@ -32,7 +32,7 @@ interface DocumentProps {
 }
 
 const Document = withEmotionCache(
-  ({ children }: DocumentProps, emotionCache) => {
+  ({ children }: DocumentProps, emotionCache,) => {
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
 
@@ -80,6 +80,17 @@ export default function App() {
         <Navbar />
         <Outlet />
       </ChakraProvider>
+    </Document>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <Document>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>
+        <h2>App Error</h2>
+        <pre>{error.message}</pre>
+      </div>
     </Document>
   );
 }

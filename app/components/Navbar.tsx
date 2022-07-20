@@ -66,22 +66,17 @@ export default function Navbar() {
                     justify={'flex-end'}
                     direction={'row'}
                     spacing={6}>
-                    <Button
-                        as={'a'}
-                        fontSize={'sm'}
-                        fontWeight={400}
-                        variant={'link'}
-                        href={'#'}>
-                        Sign In
-                    </Button>
+
                     <Button
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'sm'}
                         fontWeight={600}
                         color={'white'}
                         bg={'teal'}
+                        as="a"
+                        href="/courses/addCourse"
                     >
-                        Sign Up
+                        Add Course
                     </Button>
                 </Stack>
             </Flex>

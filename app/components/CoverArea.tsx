@@ -1,4 +1,4 @@
-import { Box, Heading, Stack, Button, Text } from "@chakra-ui/react"
+import { Box, Heading, Stack, Button, Text, Link } from "@chakra-ui/react"
 
 export default function CoverArea() {
     return (
@@ -12,9 +12,11 @@ export default function CoverArea() {
             </Text>
 
             <Stack direction='row' spacing={4} align='center'>
-                <Button colorScheme='teal' variant='solid'>
-                    Read the Docs
-                </Button>
+                <Link href="https://remix.run/docs/en/v1" isExternal>
+                    <Button colorScheme='teal' variant='solid'>
+                        Read the Docs
+                    </Button>
+                </Link>
                 <Button
                     colorScheme='teal'
                     variant='outline'

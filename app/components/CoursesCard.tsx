@@ -6,11 +6,19 @@ import {
     Text,
     Stack,
     Image,
+    Link,
 } from '@chakra-ui/react';
 
 import RemixLogo from "/images/remix.jpg"
 
-export default function CoursesCard() {
+interface CardOptionsType {
+    title: string;
+    url: string;
+    author: string;
+    content: string;
+}
+
+export default function CoursesCard({ title, url, author, content }: CardOptionsType) {
     return (
         <Box>
             <Box
@@ -25,9 +33,8 @@ export default function CoursesCard() {
                 zIndex={1}>
                 <Box
                     rounded={'lg'}
-                    mt={-12}
                     pos={'relative'}
-                    height={'330px'}
+                    height={'150px'}
                     _after={{
                         transition: 'all .3s ease',
                         content: '""',
@@ -46,22 +53,24 @@ export default function CoursesCard() {
                     }}>
                     <Image
                         rounded={'lg'}
-                        height={230}
-                        width={282}
                         objectFit={'cover'}
-                        src={RemixLogo}
+                        src="https://res.cloudinary.com/sammy365/image/upload/v1657384813/remix_yltvry.jpg"
                     />
                 </Box>
-                <Stack pt={10} align={'center'}>
+                <Stack pt={10}>
                     <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                        Remix Jokes
+                        {title}
                     </Heading>
-                    <Text color={'gray.500'} fontSize={'sm'} textTransform={'lowercase'}>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati,
-                        labore nesciunt. Suscipit non odit vero
-                        dolore veritatis ratione minus hic, ab culpa at aliquid
-                        architecto sint asperiores eligendi deserunt inventore.
+                    <Text>
+                        <strong>Author:</strong>
+                        <span> {author}</span>
                     </Text>
+                    <Link href={url}>
+                        <Text color={'gray.500'} fontSize={'sm'} textTransform={'lowercase'}>
+                            {content}
+                        </Text>
+                    </Link>
+
                 </Stack>
             </Box>
         </Box>
